@@ -1,14 +1,47 @@
 import { useState } from 'react';
-import './App.css';
-import './reset.css';
+import './style/App.css';
+import './style/reset.css';
+import Overlay from './components/overlay';
 import type { TravelInfo } from './types/travel';
-
+import type { TravelDetails } from './types/travel';
 const travelList: TravelInfo[] = [
   {
     id: 1,
     name: '서울',
     description: '과거와 현재가 만나는 활기찬 도시',
     image: '/images/seoul.jpg',
+    details: {
+      hashtag:[
+        '#한강',
+        '#남산타워',
+        '#서울숲',
+        '#경복궁'
+      ],
+      intro: '서울은 대한민국의 수도이자, 정치·경제·문화의 중심지입니다. 한강을 따라 펼쳐진 이 도시는 전통과 현대가 조화를 이루며 독특한 매력을 뽐냅니다. 경복궁, 북촌한옥마을 같은 유서 깊은 명소와 함께, 강남이나 홍대의 트렌디한 거리도 여행자들에게 큰 인기를 끌고 있죠. 밤이 되면 남산타워에서 바라보는 서울의 야경은 또 다른 감동을 선사합니다. 맛집, 쇼핑, 예술, 자연이 어우러진 서울은 누구에게나 잊지 못할 경험을 제공합니다.',
+      places: [
+        {
+          name:'경복궁',
+          image:'/images/sub/seoul1.jpg'
+        },
+        {
+          name:'한강',
+          image:'/images/sub/seoul2.jpg'
+        },
+        {
+          name:'남산타워',
+          image:'/images/sub/seoul3.jpg'
+        },
+        {
+          name:'청계천',
+          image:'/images/sub/seoul4.jpg'
+        },
+        {
+          name:'롯데타워',
+          image:'/images/sub/seoul5.jpg'
+        },
+      ],
+      route: ['경복궁', '남산타워', '청계천', '인사동', '광장시장']
+    }
   },
   {
     id: 2,
@@ -66,12 +99,12 @@ function App() {
   };
 
   const pageNumber = Math.floor(startIndex) + 1; // 한 칸씩 넘어갈 때마다 페이지 번호가 증가
-
   return (
-    <div className="Container">
+    <div className="Container" >
+      {selected && <Overlay data={selected} onClose={() => setSelected(null)} />}
       <div className='left-content'>
         <div className='left-text'>
-          <p>느르게 걷는 한국, 깊게 보는 여행</p>
+          <p>느리게 걷는 한국, 깊게 보는 여행</p>
           <h1>KOREA</h1>
           <h1>TRAVEL</h1>
           <p>

@@ -3,4 +3,15 @@ export type  TravelInfo = {
     name: string;
     description: string;
     image:string;
+    details:TravelDetails;
 }
+
+ export type TravelDetails = {
+    intro: string; 
+    hashtag: string[];
+    places:{
+        name: string;
+        image: string;
+    }[];
+    route: string[];
+ }
