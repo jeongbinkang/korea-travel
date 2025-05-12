@@ -43,42 +43,42 @@ const travelList: TravelInfo[] = [
       route: ['경복궁', '남산타워', '청계천', '인사동', '광장시장']
     }
   },
-  {
-    id: 2,
-    name: '강릉',
-    description: '커피 향 가득한 여유로운 해변 도시',
-    image: '/images/gangneung.jpg',
-  },
-  {
-    id: 3,
-    name: '경주',
-    description: '천 년의 역사를 품은 고요한 도시',
-    image: '/images/gyeongju.jpg',
-  },
-  {
-    id: 4,
-    name: '광주',
-    description: '따뜻한 사람들과 예술이 흐르는 도시',
-    image: '/images/gwangju.jpg',
-  },
-  {
-    id: 5,
-    name: '전주',
-    description: '한옥과 전통이 살아있는 매력적인 도시',
-    image: '/images/jeonju.jpg',
-  },
-  {
-    id: 6,
-    name: '부산',
-    description: '넓은 바다와 함께하는 활기찬 도시',
-    image: '/images/busan.jpg',
-  },
-  {
-    id: 7,
-    name: '제주도',
-    description: '자연과 평화가 어우러진 아름다운 섬',
-    image: '/images/jeju.jpg',
-  },
+  // {
+  //   id: 2,
+  //   name: '강릉',
+  //   description: '커피 향 가득한 여유로운 해변 도시',
+  //   image: '/images/gangneung.jpg',
+  // },
+  // {
+  //   id: 3,
+  //   name: '경주',
+  //   description: '천 년의 역사를 품은 고요한 도시',
+  //   image: '/images/gyeongju.jpg',
+  // },
+  // {
+  //   id: 4,
+  //   name: '광주',
+  //   description: '따뜻한 사람들과 예술이 흐르는 도시',
+  //   image: '/images/gwangju.jpg',
+  // },
+  // {
+  //   id: 5,
+  //   name: '전주',
+  //   description: '한옥과 전통이 살아있는 매력적인 도시',
+  //   image: '/images/jeonju.jpg',
+  // },
+  // {
+  //   id: 6,
+  //   name: '부산',
+  //   description: '넓은 바다와 함께하는 활기찬 도시',
+  //   image: '/images/busan.jpg',
+  // },
+  // {
+  //   id: 7,
+  //   name: '제주도',
+  //   description: '자연과 평화가 어우러진 아름다운 섬',
+  //   image: '/images/jeju.jpg',
+  // },
 ];
 
 function App() {

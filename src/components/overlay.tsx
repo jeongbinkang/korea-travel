@@ -8,8 +8,8 @@ import Slider from "react-slick";
 type OverlayProps = {
     data: TravelInfo;
     onClose: () => void;
-};
-
+}
+// 슬라이더
 const sliderSettings = {
     dots: true,
     infinite: true,
@@ -20,13 +20,12 @@ const sliderSettings = {
     centerMode: false,
     arrows: true
 };
-
+// 카카오맵 오픈
 const handleMapOpen = (placeName: string) => {
     const query = encodeURIComponent(placeName);
-    const url = `https://map.kakao.com/?q=${query}`;
-    window.open(url, '_blank');
-};
-
+    const url = `https://map.kakao.com/?q=${query}`
+    window.open(url, '_blank')
+}
 const Overlay = ({ data, onClose }: OverlayProps) => {
     return (
         <div className='overlay' onClick={onClose}>
@@ -34,9 +33,11 @@ const Overlay = ({ data, onClose }: OverlayProps) => {
                 <button className='close-btn' onClick={onClose}>✕</button>
                 <div className='overlay-info'>
                     <div className='subimages-content'>
+                        {/* {data.details?.subimage?.map((src, index) => (
+                     <img key={index} className='subimages' src={src} alt={`${data.name} ${index + 1}`} />
+                    ))} */}
                         <h1>" {data.name}에서 만나는 KOREA TRAVEL "</h1>
                     </div>
-
                     <div className='details-intro'>
                         <h1>{data.name} 여행</h1>
                         <h2>{data.description}</h2>
@@ -46,12 +47,10 @@ const Overlay = ({ data, onClose }: OverlayProps) => {
                             ))}
                         </div>
                     </div>
-
                     <div className='details-introduction'>
                         <h1>{data.name}, 어떤 도시일까?</h1>
                         <p>{data.details?.intro}</p>
                     </div>
-
                     <div className='details-introduction'>
                         <h1>꼭 가봐야 할 여행 스팟</h1>
                         <Slider {...sliderSettings}>
@@ -65,18 +64,6 @@ const Overlay = ({ data, onClose }: OverlayProps) => {
                                 </div>
                             ))}
                         </Slider>
-                    </div>
-
-                    <div className="travel-route-section">
-                        <h1>작성자가 추천하는 여행 코스</h1>
-                        <div className="route-u-shape">
-                            {data.details?.route?.map((place, index) => (
-                                <div key={index} className={`u-route-step ${index % 2 === 0 ? 'left' : 'right'}`}>
-                                    <div className="u-circle">{index + 1}</div>
-                                    <span className="u-label">{place}</span>
-                                </div>
-                            ))}
-                        </div>
                     </div>
                 </div>
             </div>
