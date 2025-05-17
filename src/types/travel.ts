@@ -13,5 +13,13 @@ export type  TravelInfo = {
         name: string;
         image: string;
     }[];
-    route: string[];
+    restaurant: Restaurant[];
+ };
+
+ export type Restaurant = {
+    name: string;
+    menu: string;
+    tag: string;
+    url: string;
+    image: string;
  }
